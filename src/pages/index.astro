@@ -1,34 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import evento from '../content/evento.md';
-
-const { frontmatter } = await evento.render();
+import evento from '../data/evento.json';
 ---
 
-<Layout title={`Evento: ${frontmatter.dj}`}>
+<Layout title={`Evento: ${evento.dj}`}>
   <main style="max-width: 800px; margin: 0 auto; padding: 2rem;">
     <h1 style="font-size: 3rem; margin-bottom: 1rem; color: #00ff88;">
-      {frontmatter.dj}
+      {evento.dj}
     </h1>
     
     <img 
-      src={frontmatter.flyer} 
+      src={evento.flyer} 
       alt="Flyer del evento"
       style="width: 100%; max-width: 500px; border-radius: 10px; margin: 2rem 0;"
     />
     
     <div style="margin: 2rem 0;">
       <p style="font-size: 1.2rem;">
-        <strong>📅 Fecha:</strong> {new Date(frontmatter.fecha).toLocaleDateString()}
+        <strong>📅 Fecha:</strong> {new Date(evento.fecha).toLocaleDateString()}
       </p>
       <p style="font-size: 1.2rem;">
-        <strong>📍 Lugar:</strong> {frontmatter.lugar}
+        <strong>📍 Lugar:</strong> {evento.lugar}
       </p>
       <p style="font-size: 1.2rem;">
-        <strong>💰 Precio:</strong> {frontmatter.precio}
+        <strong>💰 Precio:</strong> {evento.precio}
       </p>
       <p style="font-size: 1.1rem; margin-top: 1.5rem; line-height: 1.6;">
-        {frontmatter.descripcion}
+        {evento.descripcion}
       </p>
     </div>
     
