@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  - name: "evento"
+    label: "Evento"
+    files:
+      - file: "src/content/evento.md"
+        name: "evento"
+        label: "Información del Evento"
+        fields:
+          - {label: "Nombre del DJ", name: "dj", widget: "string"}
+          - {label: "Fecha del Evento", name: "fecha", widget: "datetime"}
+          - {label: "Lugar", name: "lugar", widget: "string"}
+          - {label: "Descripción", name: "descripcion", widget: "text"}
+          - {label: "Precio", name: "precio", widget: "string"}
+          - {label: "Flyer", name: "flyer", widget: "image"}
